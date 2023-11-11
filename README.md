@@ -1,1 +1,2 @@
-# project-inventory-web-app
+# Welcome to Needle and Wax!
+

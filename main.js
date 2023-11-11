@@ -16,25 +16,33 @@ function addSongInfo() {
         const price = formElement.newPrice.value;
         const stockStatus = formElement.newStock.value;
 
-        // Clears the form after submission
-        formElement.reset();
-
-        // Checks if info is provided
-        if (albumArt && artist && album && genre && year) {
-            // Creates a new song entry with provided data
+        let errorMessage = '';
+        
+        // Check for completeness or validity
+        if (!albumArt) {
+            errorMessage = "Album Artwork is required.";
+        } else if (!artist) {
+            errorMessage = "Artist is required.";
+        } else if (!album) {
+            errorMessage = "Album name is required.";
+        } else if (!genre) {
+            errorMessage = "Genre is required.";
+        } else if (!year) {
+            errorMessage = "Year is required.";
+        } else if (!(/^\d{4}$/.test(year))) {
+            errorMessage = "Please enter a 4-digit number for the year.";
+        } else if (!(/^\d+\.\d{2}$/.test(price))) {
+            errorMessage = "Please enter a valid price with two decimal places (e.g., 9.99).";
+        }
+        
+        if (errorMessage) {
+            alert(errorMessage);
+        } else {
+            // If all form fields are complete and valid, add the entry
             const entry = createSongEntry(albumArt, artist, album, genre, year, price, stockStatus);
             songInfo.insertBefore(entry, songInfo.firstChild);
-        } else {
-            // Displays an error message if required fields are incomplete
-            const errorBox = document.createElement("div");
-            errorBox.textContent = "Please enter a value in all required fields.";
-            errorBox.classList.add("error-box");
-            formElement.appendChild(errorBox);
-            
-            // Removes the error message after 5 seconds
-            setTimeout(() => {
-                errorBox.remove();
-            }, 5000);
+            // Reset the form after successful submission
+            formElement.reset();
         }
     });
 
@@ -103,7 +111,7 @@ function addSongInfo() {
         details.appendChild(yearParagraph);
         
         const priceParagraph = document.createElement("p");
-        priceParagraph.textContent = `Price: ${price}`;
+        priceParagraph.textContent = `Price: $${price}`;
         details.appendChild(priceParagraph);
         
         const stockParagraph = document.createElement("p");

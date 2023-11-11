@@ -5,19 +5,20 @@ h2 {
   
 .header {
     display: grid;
-    background-image: url("https://img.freepik.com/premium-photo/closeup-view-tonearm-turntable-playing-vinyl-record-entertainment-music-trends-black-white-image_555047-3.jpg");
-    background-repeat: no-repeat;
+    background-image: url("https://assets.klipsch.com/images/klipsch-best-speakers-for-turntable-record-player.jpg");
     background-position: center;
     background-size: cover;
+    padding-top: 50px;
 }
   
 .header h1 {
-    display: inline-block;
-    padding: 15px;
+    display: inline;
+    margin-bottom: 50px;
     color: white;
     text-align: center;
     font-size: 35px;
     font-family: Arial, Helvetica, sans-serif;
+    background-color: rgb(0, 0, 0, 0.7);
 }
 
 
@@ -58,42 +59,47 @@ h2 {
     border-width: thick;
 }
 
+.entry img {
+    width: 250px;
+}
+
 
 /* ADD A RECORD */
 .main {
     display: inline-block;
-    background-image: url("https://m.media-amazon.com/images/I/81IviYlYkjL._AC_UF894,1000_QL80_.jpg");
+    background-image: url("https://i.etsystatic.com/17353142/r/il/26fb14/4532080144/il_fullxfull.4532080144_e44i.jpg");
     background-attachment: scroll;
     background-size: cover;
-    text-align: right;
     padding-right: 50px;
 }
 
 .main h2 {
     color: white;
-    background-color: rgb(0, 0, 0, 0.7);
     display: inline-block;
     border-radius: 10px;
     padding-top: 5px;
     padding-left: 10px;
     padding-right: 10px;
-    padding-bottom: 3px;
-    position: sticky;
+    padding-bottom: 10px;
+    text-align: right;
 }
 
 .main form {
-    display: inline-block;
     background-color: rgb(0, 0, 0, 0.7);
     height: 580px;
-    padding-top: 15px;
-    padding-left: 10px;
-    padding-right: 15px;
-    margin-bottom: 105px;
+    padding-top: 5px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 95px;
+    margin-right: 20px;
     border-radius: 20px;
+    text-align: right;
+    position: fixed;
+    right: 0;
 }
 
 .main label {
-    color: aliceblue;
+    color: white;
     font-weight: bold;
 }
 
@@ -117,20 +123,13 @@ button:hover {
     color: white;
 }
 
-.error-box {
-    background-color: red;
-    color: white;
-    padding: 20px;
-    margin-top: 20px;
-    border-radius: 5px;
-}
-
 
 /* FOOTER */
 .footer {
     background: black;
-    padding: 10px;
+    padding: 5px;
     text-align: center;
+    margin-top: 2px;
 }
 
 .footer a {
@@ -140,7 +139,7 @@ button:hover {
 
 /* MEDIA QUERIES */
 /* For screens smaller than 768px */
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 838px) {
     .primary-content {
         grid-template-columns: 1fr;
     }
@@ -148,6 +147,10 @@ button:hover {
     .main {
         order: -1;
         padding: 20px;
+    }
+
+    .main form {
+        position: relative;
     }
 
     .inventory {
@@ -159,9 +162,9 @@ button:hover {
     }
 }
 
-/* For screens bigger than 1127px */
-@media (min-width: 1127px) {
-    .primary-content {
-        border: solid white;
+/* For screens bigger than 1133px */
+@media (min-width: 1133px) {
+    .main form {
+        width: auto;
     }
 }

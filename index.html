@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inventory Web App</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="main.js" defer></script>
+</head>
+<body>
+    <div class="header">
+        <h1 id="title">
+            Needle and Wax
+        </h1>
+    </div>
+    
+    <div class="primary-content">
+        <div class="inventory">
+          <h2>Inventory</h2>
+          
+          <main class="info">
+            <p></p>
+
+            <ul></ul>
+          </main>
+        </div>
+    
+        <div class="main">
+          <h2>Add a record</h2>
+
+          <form id="form">
+            <label for="artwork">
+                Album Artwork: 
+                <input id="artwork" name="newArtwork" type="text" placeholder="Type in artwork URL..."></input>
+              </label>
+              <br />
+
+            <label for="artist">
+                Artist(s): 
+                <input id="new-artist" name="newArtist" type="text" placeholder="Type in an artist name..."></input>
+              </label>
+              <br />
+
+              <label for="album">
+                Album: 
+                <input id="new-album" name="newAlbum" type="text" placeholder="Type in an album name..."></input>
+              </label>
+              <br />
+
+              <label for="genre">
+                Genre: 
+                <input id="new-genre" name="newGenre" type="text" placeholder="Type in a genre..."></input>
+              </label>
+              <br />
+
+              <label for="year">
+                Year: 
+                <input id="new-year" name="newYear" type="number" placeholder="Type in a year..."></input>
+              </label>
+              <br />
+
+              <label for="price">
+                Price: 
+                <input id="new-price" name="newPrice" type="number" step="0.01" placeholder="Type in a price..."></input>
+              </label>
+              <br />
+
+              <label for="stock">
+                Stock Status:
+                <select id="stock" name="newStock">
+                  <option value="select">------ Select One ------</option>
+                  <option value="In Stock">In Stock</option>
+                  <option value="Out Of Stock">Out of Stock</option>
+                </select>
+              </label>
+              <br />
+            
+              <button id="reset button" type="reset">Reset</button>
+              
+              <button id="submit" type="submit">Submit</button>
+          </form>
+        </div>
+    </div>
+
+    <div class="footer">
+      <div>
+        <a href="https://www.discogs.com/">Click for more details on records</a>
+      </div>
+    </div>
+</body>
+</html>
